@@ -4,3 +4,4 @@ pydantic
 sqlalchemy
 pydantic-settings
 asyncpg
+httpx

@@ -43,6 +43,8 @@ jobs:
 
       - name: Установка зависимостей
         run: npm ci
+      - name: тест
+        run: npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
 
       - name: Запуск тестов
         run: npm test

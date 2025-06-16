@@ -24,7 +24,8 @@ jobs:
 
       - name: Установка зависимостей
         run: npm ci
-
+      - name: тест
+        run: npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
       - name: Запуск линтера
         run: npm run lint
 
@@ -43,7 +44,6 @@ jobs:
       - name: Установка зависимостей
         run: npm ci
       - name: тест
-        run: npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
-
+        run: npm install --save-dev jest @types/jest ts-jest
       - name: Запуск тестов
         run: npm test

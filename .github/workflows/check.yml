@@ -46,6 +46,6 @@ jobs:
       - name: тест
         run: npm install --save-dev jest@latest ts-jest@latest @types/jest@latest
       - name: тест
-        run: jest-environment-jsdom@latest
+        run: npm install jest-environment-jsdom@latest
       - name: Запуск тестов
         run: npm test

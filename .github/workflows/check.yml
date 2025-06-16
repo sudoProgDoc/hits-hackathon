@@ -1,22 +1,48 @@
-name: Check
-on: push
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - 'feature/*'
+  pull_request:
+    branches:
+      - main
+
 jobs:
-    lint:
-        runs-on: ubuntu-latest
-        steps:
-          - name: Checkout
-            uses: actions/checkout@v4
-          - name: Install deps
-            run: npm ci
-          - name: Lint
-            run: npm run lint
-    test:
-        needs: [lint]
-        runs-on: ubuntu-latest
-        steps:
-          - name: Checkout
-            uses: actions/checkout@v4
-          - name: Install deps
-            run: npm ci
-          - name: Test
-            run: npm run test
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Проверка исходного кода
+        uses: actions/checkout@v2
+
+      - name: Установка Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Установка зависимостей
+        run: npm ci
+
+      - name: Запуск линтера
+        run: npm run lint
+
+  test:
+    runs-on: ubuntu-latest
+    needs: lint
+
+    steps:
+      - name: Проверка исходного кода
+        uses: actions/checkout@v2
+
+      - name: Установка Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Установка зависимостей
+        run: npm ci
+
+      - name: Запуск тестов
+        run: npm test

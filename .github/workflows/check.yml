@@ -44,6 +44,6 @@ jobs:
       - name: Установка зависимостей
         run: npm ci
       - name: тест
-        run: npm install --save-dev jest @types/jest ts-jest
+        run: npm install --save-dev jest@latest ts-jest@latest @types/jest@latest
       - name: Запуск тестов
         run: npm test

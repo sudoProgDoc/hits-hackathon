@@ -4,9 +4,9 @@ from fastapi.params import Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from ai_compression.app.database import get_db
-from ai_compression.app.services.compress_news_services import create_news, get_news
-from ai_compression.app.schemas.compress_news_schema import NewsRequest, TagsNewsRequest, CompressNewsResponse
-from ai_compression.app.utils.parse_compressed_news import parse_compressed_news
+from ai_compression.app.compress_news_services import create_news, get_news
+from ai_compression.app.compress_news_schema import NewsRequest, TagsNewsRequest
+from ai_compression.app.parse_compressed_news import parse_compressed_news
 from ai_compression.app.config import settings
 router = APIRouter()
 

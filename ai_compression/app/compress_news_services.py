@@ -1,12 +1,12 @@
 from typing import List
 
 from fastapi import HTTPException
-from sqlalchemy import select, or_, any_
+from sqlalchemy import select
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from ai_compression.app.models.compress_news_model import CompressNews
-from ai_compression.app.schemas.compress_news_schema import CompressNewsResponse
+from ai_compression.app.compress_news_model import CompressNews
+from ai_compression.app.compress_news_schema import CompressNewsResponse
 
 
 async def create_news(db: AsyncSession, title: str, body: str, tags: List[str], url: str) -> str:

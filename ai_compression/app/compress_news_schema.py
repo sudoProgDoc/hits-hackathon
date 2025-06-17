@@ -18,9 +18,12 @@ class NewsRequest(BaseModel):
 
 class CompressNewsResponse(BaseModel):
     url: str
+    source: str
     title: str
     body: str
     tags: list[str]
+    published: datetime
+
 
 class TagsNewsRequest(BaseModel):
     tags: list[str]

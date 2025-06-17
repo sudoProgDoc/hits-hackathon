@@ -3,6 +3,7 @@ from fastapi import FastAPI, HTTPException, Depends
 from fastapi.security import OAuth2PasswordRequestForm
 import httpx
 from datetime import datetime
+from fastapi.middleware.cors import CORSMiddleware
 
 from jose import jwt, JWTError
 
@@ -14,6 +15,19 @@ from .config import settings
 
 app = FastAPI()
 
+origins = [
+    "http://localhost",
+    "http://localhost:3000",
+    "https://yourdomain.com"
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,  # Разрешенные источники
+    allow_credentials=True,  # Разрешить учетные данные (cookies, авторизация)
+    allow_methods=["*"],  # Разрешенные HTTP-методы
+    allow_headers=["*"],  # Разрешенные заголовки
+)
 
 @app.on_event("startup")
 async def startup():

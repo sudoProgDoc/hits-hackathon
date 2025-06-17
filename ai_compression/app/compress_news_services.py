@@ -1,3 +1,4 @@
+from datetime import datetime
 from typing import List
 
 from fastapi import HTTPException
@@ -9,13 +10,15 @@ from ai_compression.app.compress_news_model import CompressNews
 from ai_compression.app.compress_news_schema import CompressNewsResponse
 
 
-async def create_news(db: AsyncSession, title: str, body: str, tags: List[str], url: str) -> str:
+async def create_news(db: AsyncSession, title: str, body: str, tags: List[str], url: str, published_time: datetime, source: str) -> str:
     try:
         db_news = CompressNews(
             title=title,
             body=body,
             tags=[tag.lower() for tag in tags],
-            url=url
+            url=url,
+            published=published_time,
+            source=source,
         )
         db.add(db_news)
         await db.commit()

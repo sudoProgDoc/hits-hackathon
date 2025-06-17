@@ -1,9 +1,20 @@
+from datetime import datetime
+from typing import List
+
 from pydantic import BaseModel
 
 
-class NewsRequest(BaseModel):
+class Article(BaseModel):
     url: str
-    body: str
+    publish_time: datetime
+    content: str
+    content_preview: str
+
+class NewsRequest(BaseModel):
+    parse_date: datetime
+    source_url: str
+    total_articles: int
+    articles: List[Article]
 
 class CompressNewsResponse(BaseModel):
     url: str

@@ -23,7 +23,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd ai_compression
+          cd news-tracker-main
           npm i
 
       - name: Run tests

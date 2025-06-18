@@ -3,10 +3,10 @@ name: CI
 on:
   push:
     paths:
-      - 'frontend/**'
+      - 'news-tracker-main/**'
   pull_request:
     paths:
-      - 'frontend/**'
+      - 'news-tracker-main/**'
 
 jobs:
   test:

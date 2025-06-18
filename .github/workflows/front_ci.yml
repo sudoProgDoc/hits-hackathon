@@ -4,11 +4,11 @@ on:
   push:
     paths:
       - 'news-tracker-main/**'
-      - 'hits-hackathon/.github/workflows/**'
+      - 'hits-hackathon/.github/workflows/front_ci.yml'
   pull_request:
     paths:
       - 'news-tracker-main/**'
-      - 'hits-hackathon/.github/workflows/**'
+      - 'hits-hackathon/.github/workflows/front_ci.yml'
 
 jobs:
   test:

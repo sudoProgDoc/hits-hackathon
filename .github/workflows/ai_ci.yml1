@@ -1,4 +1,4 @@
-name: CI
+name: CI #Написать тесты и изменить расширение файла на .yml, тогда пайплайн заработает
 
 on:
   push:
@@ -29,5 +29,5 @@ jobs:
 
       - name: Test with pytest
         run: |
-          pip install pytest  # Установите pytest, если он не установлен
+          pip install pytest
           pytest

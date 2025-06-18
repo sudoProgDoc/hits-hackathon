@@ -10,11 +10,14 @@ class Article(BaseModel):
     content: str
     content_preview: str
 
-class NewsRequest(BaseModel):
+class News(BaseModel):
     parse_date: datetime
     source_url: str
     total_articles: int
     articles: List[Article]
+
+class NewsRequest(BaseModel):
+    news: List[News]
 
 class CompressNewsResponse(BaseModel):
     url: str

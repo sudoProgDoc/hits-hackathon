@@ -6,8 +6,8 @@ from sqlalchemy import select
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from ai_compression.app.compress_news_model import CompressNews
-from ai_compression.app.compress_news_schema import CompressNewsResponse
+from compress_news_model import CompressNews
+from compress_news_schema import CompressNewsResponse
 
 
 async def create_news(db: AsyncSession, title: str, body: str, tags: List[str], url: str, published_time: datetime, source: str) -> str:

@@ -23,6 +23,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          cd ai_compression
           npm i
 
       - name: Run tests

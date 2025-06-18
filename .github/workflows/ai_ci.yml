@@ -27,6 +27,6 @@ jobs:
           pip install -r requirements.txt
 
       - name: Test with pytest
-      run: |
-        conda install pytest
-        pytest
+        run: |
+          pip install pytest  # Установите pytest, если он не установлен
+          pytest

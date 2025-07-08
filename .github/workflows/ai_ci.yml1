@@ -2,11 +2,6 @@ name: CI #Написать тесты и изменить расширение �
 
 on:
   push:
-    paths:
-      - 'ai_compression/**'
-  pull_request:
-    paths:
-      - 'ai_compression/**'
 
 jobs:
   test:
